@@ -948,7 +948,7 @@ app.layout = html.Div([
 
             dbc.Col(html.Div([
 
-            html.H5("Iman Kewalramani / Xiaoqi Gao"), # UofT
+            html.H5("Iman Kewalramani & Xiaoqi Gao"), # UofT
             html.P("Research assistant and python programmer of the back-end framework using Dash Plotly at the University of Toronto")]), width=4),
 
 
