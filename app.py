@@ -18,7 +18,7 @@ import json
 
 plotly_figure = dict(data=[dict(x=[1, 2, 3], y=[2, 4, 8])])
 # make the mode 
-modebar_config = {'showTips': True,'displayModeBar': True, 'displaylogo': False, 'fontSize':18}
+modebar_config = {'showTips': True,'displayModeBar': True, 'displaylogo': False}
 
 
 # Load data
@@ -1057,7 +1057,26 @@ def text_callback(inst, gender, age, enroll, mode, commsatis, travcost, livingsi
     if(mode is not None):
         filteredDf = filteredDf[filteredDf['psmainmodefalltypical'] == mode]
     if(commsatis is not None):
-        filteredDf = filteredDf[filteredDf['ps18HadThe____TravelExperience'] == commsatis]
+        # convert the text to numbers
+        questionTitle = ['ps18HadThe____TravelExperience', 'ps19QualityOfTravelWas____', 
+                    'ps20TravelWorked_____']
+
+        replacer = {'Worst': 1, 'Bad': 2,'Average': 3, 'Good': 4, 'Best': 5}
+
+        # Replace qualitative values with quantitative numbers in "questionTitle" Columns
+        for ques in questionTitle:
+            df[ques] = df[ques].replace(replacer)
+
+        # average Q18-20 and create a new column
+        filteredDf['commsatisAvg'] = filteredDf[['ps18HadThe____TravelExperience', 'ps19QualityOfTravelWas____', 
+                            'ps20TravelWorked_____']].mean(axis=1)
+
+        filteredDf['commsatisAvg'].round(0)
+
+        print(filteredDf['commsatisAvg'])
+        print(replacer[commsatis])
+
+        filteredDf = filteredDf[filteredDf['commsatisAvg'] == replacer[commsatis]]
     if(travcost is not None):
         filteredDf = filteredDf[filteredDf['Monthly Transportation Cost ($)'] == travcost]
     if(livingsit is not None):
@@ -1096,7 +1115,7 @@ def text_callback(inst, gender, age, enroll, mode, commsatis, travcost, livingsi
         table = pd.pivot_table(filteredDf, values='PsKey_', index=[
             visvar], aggfunc='count')
 
-        # total number of people living in that partucykar 
+        # total number of people living in that area 
         table['% of Total'] = (table["PsKey_"] / table["PsKey_"].sum() * 100)
 
         print(table)
