@@ -914,7 +914,7 @@ app.layout = html.Div([
             [
 
                 html.H5("Raktim Mitra, PhD"),
-                html.P("School of Urban and Regional Planning, Director of Transportation and Land Use Planning Research Lab at Ryerson Univerity")]), width=4),
+                html.P("School of Urban and Regional Planning, Director of Transportation and Land Use Planning Research Lab at Toronto Metropolitan Univerity")]), width=4),
 
 
         ],
