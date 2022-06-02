@@ -1,0 +1,77 @@
+element {
+    --highlight-color: #f58220;
+  }
+
+body {
+    font-family: sans-serif;
+}
+/* h1, h2, h3, h4, h5, h6 {
+    color: hotpink
+} */
+
+.Bottom-space {
+    padding-top: 1rem; 
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+}
+
+.Center-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.Img-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Title {
+    padding-top: 1rem; 
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* input box */
+.Select-control {
+    /* background-color: black; */
+    /* color: black; */
+}
+
+.Select-placeholder {
+    /* background-color: black; */
+    color: rgb(118, 118, 118); 
+}
+
+
+/* changes the text color of input box */
+.Select-value-label {
+    color: #f58220 !important;
+    font-weight: 700;
+    /* background-color: black; */
+}
+
+/* .Select--single > .Select-control .Select-value, .Select-placeholder {
+    border: 1px solid grey;
+    border-radius: 4px;
+} */
+
+.modebar-btn {
+    height: 50 px;
+    width: 50 px;
+    font-size: 18 px;
+}
+
+svg {
+    height: 50 px;
+    width: 50 px;
+}
+
+
+/* dropdown menu options */
+.VirtualizedSelectOption {
+    /* background-color: black;
+    color: white; */
+ }
+
