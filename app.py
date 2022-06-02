@@ -979,17 +979,6 @@ app.layout = html.Div([
         className="text-light p-5",
     ),
 
-  
-
-    # dbc.Row(
-    #     dbc.Col(html.H1("—",
-    #                     className='text-center'), width=12)
-    # ),
-
-
-
-
-
 
     # end -- closing app
 ])
