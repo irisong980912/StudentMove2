@@ -387,7 +387,7 @@ app.layout = html.Div([
             dbc.Col(html.Div([
 
                 # html.H5("Acknowledgment"), 
-                html.P("We gratefully acknowledge the contributions made by the following institutions: \nCentennial College, Durham College, McMaster University, Mohawk College, OCAD University, Ontario Tech University, Sheridan College, Toronto Metro University (Ryerson), University of Toronto, York University.")], style={"width": "80%"}), width=12),
+                html.P("We gratefully acknowledge the contributions made by the following institutions: \nCentennial College, Durham College, McMaster University, Mohawk College, OCAD University, Ontario Tech University, Sheridan College, Toronto Metropolitan University (Ryerson), University of Toronto, York University.")], style={"width": "80%"}), width=12),
 
 
         ],
